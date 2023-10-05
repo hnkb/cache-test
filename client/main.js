@@ -1,4 +1,40 @@
 
+{
+	const cached = await(await caches.open('v1')).keys();
+	console.log(`${cached.length} items already in cache.`, cached.map(r => new URL(r.url).pathname));
+}
+
+
+async function registerServiceWorker() {
+	if ("serviceWorker" in navigator) {
+		try {
+			const reg = await navigator.serviceWorker.register('/svcWorker.js', {
+				scope: '/',
+				type: 'module',
+			});
+
+			if (reg.installing) {
+				console.log('Service worker installing');
+			} else if (reg.waiting) {
+				console.log('Service worker installed');
+			} else if (reg.active) {
+				console.log('Service worker active');
+			}
+		} catch (error) {
+			console.error(`Service Worker registration failed with ${error}`);
+		}
+	}
+	else {
+		console.error('Service Worker is not supported on this browser.');
+	}
+}
+
+registerServiceWorker();
+
+///////////////
+
+
+
 const count = (new URL(location.href).searchParams.get('count')) || 300;
 
 const start = performance.now();
