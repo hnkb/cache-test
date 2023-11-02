@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cache test - API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="cache-summary">waiting...</h1>
+    <ul id="cache-list"></ul>
+    <div id="selected">
+        <p>URL path: <strong class="url"></strong></p>
+        <p class="status"></p>
+        <img />
+    </div>
+
+    <div style="margin: 2em 0; background: #eee; padding: 1em; width: 300px;">
+        <p>Query cache:</p>
+        <input id="query" />
+    </div>
+    <form id="add" style="margin: 2em 0; background: #eee; padding: 1em; width: 300px;">
+        <p>Add to cache:</p>
+        <p>Key: <input class="key" /></p>
+        <p>URL: <input class="url" /></p>
+        <input type="submit" value="Add" />
+    </form>
+    
+    <script type="module" src="cache-api.js"></script>
+</body>
+
+</html>

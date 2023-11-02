@@ -9,3 +9,39 @@ body {
 	width: 128px;
 	margin: 16px 0 0 16px;
 }
+
+
+
+#cache-list {
+	background: #eee;
+	height: 600px;
+	width: 300px;
+	overflow-y: scroll;
+	list-style: none;
+	padding: 0;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+}
+
+#cache-list li {
+	padding: 8px;
+}
+
+#cache-list li:hover {
+	background: #d54;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+#selected {
+	display: inline-block;
+	height: 600px;
+	width: 500px;
+	vertical-align: top;
+}
+#selected img{
+	max-width: 500px;
+	max-height: 600px;
+}
